@@ -1,0 +1,34 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" version="29.3.6">
+  <diagram name="Page-1" id="cETg0iKh2qzgIoGIxx5A">
+    <mxGraphModel dx="872" dy="534" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Sk3DAqCoovPFKg3UMKZ7-2" parent="1" style="image;html=1;image=img/lib/clip_art/general/Empty_Folder_128x128.png;fontSize=10;" value="F:\Backup" vertex="1">
+          <mxGeometry height="40" width="40" x="52" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Sk3DAqCoovPFKg3UMKZ7-3" parent="1" style="image;html=1;image=img/lib/clip_art/general/Empty_Folder_128x128.png;fontSize=10;" value="logs" vertex="1">
+          <mxGeometry height="40" width="40" x="123" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="Sk3DAqCoovPFKg3UMKZ7-4" edge="1" parent="1" source="Sk3DAqCoovPFKg3UMKZ7-2" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="Sk3DAqCoovPFKg3UMKZ7-3" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="72" y="300" />
+            </Array>
+            <mxPoint x="212" y="370" as="sourcePoint" />
+            <mxPoint x="262" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sk3DAqCoovPFKg3UMKZ7-5" parent="1" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.computer;pointerEvents=1;fontSize=10;" value="My Computer" vertex="1">
+          <mxGeometry height="40" width="44.44" x="50" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Sk3DAqCoovPFKg3UMKZ7-6" edge="1" parent="1" source="Sk3DAqCoovPFKg3UMKZ7-5" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="Sk3DAqCoovPFKg3UMKZ7-2" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="212" y="370" as="sourcePoint" />
+            <mxPoint x="262" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

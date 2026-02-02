@@ -2,8 +2,11 @@
 setlocal
 
 :: Define source and destination paths
-set "SOURCE_DIR=F:\Newfolder"
+set "SOURCE_DIR=F:\TestBackup\1"
+set "SOURCE_DIR2=F:\TestBackup\2"
+
 set "DEST_DIR=D:\Backup"
+
 set "LOG_FILE=%DEST_DIR%\logs\backup_log_%DATE:~-4,4%%DATE:~-7,2%%DATE:~-10,2%_%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%.log"
 
 :: Create destination directory if it doesn't exist
@@ -14,9 +17,11 @@ if not exist "%DEST_DIR%" (
 
 :: Start backup process
 echo %DATE% %TIME% - Starting backup from "%SOURCE_DIR%" to "%DEST_DIR%" >> "%LOG_FILE%"
+echo %DATE% %TIME% - Starting backup from "%SOURCE_DIR2%" to "%DEST_DIR%" >> "%LOG_FILE%"
 
 :: Use xcopy for backup (or robocopy for more advanced options)
 xcopy "%SOURCE_DIR%" "%DEST_DIR%" /s /e /h /y /d >> "%LOG_FILE%" 2>&1
+xcopy "%SOURCE_DIR2%" "%DEST_DIR%" /s /e /h /y /d >> "%LOG_FILE%" 2>&1
 
 :: Check for errors and log completion
 if %errorlevel% neq 0 (
