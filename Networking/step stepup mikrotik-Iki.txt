@@ -1,0 +1,32 @@
+
+===============================
+***** step setup mikrotik *****
+===============================
+
+1. system identity
+	/system identity set name="Britis Moto Bekasi"
+2. bikin interface nama
+	/interface set [find name="ether2"] name="ether2-INET"
+	/interface set [find name="ether3"] name="ether3-LAN"
+
+3. ip address
+	/ip address add address=192.168.1.3/24 interface=ether2-INET
+	/ip address add address=10.10.80.1/24 interface=ether3-LAN
+
+4. gateway
+	/ip route add gateway=ether3-LAN
+
+5. dns
+	/ip dns set allow-remote-requests=yes cache-max-ttl=3h cache-size=10240KiB servers=8.8.8.8,1.1.1.1
+
+6. dhcp server
+	/ip pool add name=dhcp_pool1 ranges=10.10.80.2-10.10.80.254
+	/ip dhcp-server add address-pool=dhcp_pool1 interface=ether3 name=dhcp1 disabled=no
+	/ip dhcp-server network add address=10.10.80.0/24 gateway=ether3-LAN dns-server=8.8.8.8,1.1.1.1
+
+7. masquerade firewall
+	/ip firewall nat add chain=srcnat action=masquerade out-interface=ether2-INET
+
+8. queue
+	/queue simple add name="Total-BW" target=10.10.80.0/24 max-limit=100M/100M priority=1/1
+	:for e from 2  to 254 do={ /queue simple add name="CLIENT-$e" target="10.10.80.$e" max-limit=3M/3M parent="Total-BW"}
